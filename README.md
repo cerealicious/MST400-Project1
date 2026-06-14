@@ -1,9 +1,3 @@
-markdown_guide = """# Comprehensive Implementation Guide: Multi-Region Azure Website Deployment with Global Performance Routing
-
-This repository provides an expert-level, step-by-step technical manual for implementing a high-availability, fault-tolerant website architecture across multiple geographic regions in Microsoft Azure.
-
----
-
 ## Project Architecture Overview
 
 The final architecture consists of:
