@@ -146,6 +146,17 @@ This sequence must be executed on **all four deployed VM nodes** individually to
 2. Scroll down the left settings blade sidebar until reaching the **`Help`** section group; click on **`Run command`**.
 3. Select **`RunPowerShellScript`** from the action layout template listing.
 4. Copy and paste the following PowerShell script block into the command code editor terminal box, replacing the uppercase variables with your matching data parameters:
+
+```powershell
+# Install IIS Web Server feature roles cleanly
+Install-WindowsFeature -name Web-Server -IncludeManagementTools
+
+# Purge standard static baseline graphic asset placeholders
+Remove-Item 'C:\inetpub\wwwroot\iisstart.htm'
+
+# Establish customized identification response frame
+Add-Content -Path 'C:\inetpub\wwwroot\iisstart.htm' -Value "<h1>Student Name: YOUR_ACTUAL_NAME</h1><h2>Region: DEPLOYED_REGION_NAME</h2><h3>VM Hosting Instance Node: CURRENT_VM_NAME</h3>"
+
 ---
 
 ### Phase 5: Regional High Availability Load Balancers
