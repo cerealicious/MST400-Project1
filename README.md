@@ -156,7 +156,7 @@ Remove-Item 'C:\inetpub\wwwroot\iisstart.htm'
 
 # Establish customized identification response frame
 Add-Content -Path 'C:\inetpub\wwwroot\iisstart.htm' -Value "<h1>Student Name: YOUR_ACTUAL_NAME</h1><h2>Region: DEPLOYED_REGION_NAME</h2><h3>VM Hosting Instance Node: CURRENT_VM_NAME</h3>"
-
+```
 ---
 
 ### Phase 5: Regional High Availability Load Balancers
