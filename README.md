@@ -163,6 +163,17 @@ Add-Content -Path 'C:\inetpub\wwwroot\iisstart.htm' -Value "<h1>Student Name: YO
 
 *Execute this design lifecycle configuration cycle **twice**: once for Region 1 (Canada) and once for Region 2 (Spain).*
 
+#### Task 1: Add a DNS Name Label to your Public IPs (CRITICAL PRE-REQUISITE)
+> ⚠️ **IMPORTANT:** Traffic Manager requires that every Azure Endpoint has a valid Domain Name (FQDN). Before configuring the Load Balancer in Traffic Manager, you must assign a unique DNS label to each Load Balancer Public IP resource.
+
+1. In the very top search bar of the Azure Portal, type **Public IP addresses** and click on it from the dropdown list.
+2. Select your Canada Load Balancer IP named **`CerilTalan-LBPip-R1`**.
+3. On the left-hand menu blade, under the **Settings** section, click on **Configuration**.
+4. Locate the field that says **DNS name label (optional)** and type a unique, lowercase name (e.g., `ceriltalan-canada-lb`).
+5. Click the **Save** floppy disk icon located at the top-left corner.
+6. Go back to **Public IP addresses**, select your Spain Load Balancer IP (**`CerilTalan-LBPip-R2`**), navigate to **Configuration**, and give it a unique label (e.g., `ceriltalan-spain-lb`). Click **Save**.
+
+#### Task 2: Creating the Load Balancer Resource Layer
 1. Enter **Load balancers** inside the top lookup component engine interface and click on it.
 2. Select **`+ Create`** on the top actions task utility header.
 3. Under the **Basics** configuration tab grid, enter the parameters exactly:
@@ -216,7 +227,7 @@ Add-Content -Path 'C:\inetpub\wwwroot\iisstart.htm' -Value "<h1>Student Name: YO
    * **Type**: `Azure endpoint`.
    * **Name**: `Canada-Endpoint`.
    * **Target resource type**: `Public IP address`.
-   * **Target public IP address**: Select your Canada Load Balancer Public IP identity context string (**`YourName-LBPip-R1`**).
+   * **Target public IP address**: Select your Canada Load Balancer Public IP configuration entry (**`YourName-LBPip-R1`**), which now has its custom FQDN attached.
 5. Click **`Add`**.
 6. Repeat steps 3–5 to link your second region, naming it `Spain-Endpoint` and linking it to **`YourName-LBPip-R2`**.
 
